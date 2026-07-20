@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        fieldset {
+            border: 3px dashed rgb(255, 0, 0);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.288);
+            background-color: rgb(235, 196, 196);
+            width: 300px;
+        }
+
+        legend {
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input.send {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.288);
+            background-color: rgb(235, 196, 196);
+        }
+
+        input.send:hover {
+            background-color: rgb(235, 149, 149);
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Formulário</h1>
+    <form action="cadastro.php" method="get" autocomplete="on">
+        <fieldset>
+            <legend> Dados pessoais </legend>
+            <p>
+                <label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome" required minlength="5" maxlength="20" placeholder="Insira o Nome">
+            </p>
+            <p>
+                <label for="iemail">E-mail:</label>
+                <input type="email" name="email" id="iemail" placeholder="Insira o e-mail" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="itel">Telefone:</label>
+                <input type="tel" name="tel" id="itel" placeholder="(xx) xxxx-xxxx" autocomplete="tel" pattern="^\d({2}\)\d{4,5}-\d{4}$" required>
+            <!-- Estudar mais sobre RegEx -->
+            </p>
+        </fieldset>
+        <p><input class="send" type="submit" value="Enviar">
+        <input class="send" type="reset" value="Limpar"></p>
+    </form>
+</body>
+</html>
